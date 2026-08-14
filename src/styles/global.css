@@ -12,7 +12,7 @@
 }
 
 * { box-sizing: border-box; }
-html { scroll-behavior: smooth; }
+html { scroll-behavior: smooth; scroll-padding-top: 112px; }
 body {
   margin: 0;
   background: var(--paper);
@@ -23,6 +23,9 @@ body {
 a { color: inherit; }
 .shell { width: min(var(--max), calc(100% - 40px)); margin-inline: auto; }
 .site-header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
   width: min(var(--max), calc(100% - 40px));
   margin: 0 auto;
   min-height: 92px;
@@ -30,6 +33,24 @@ a { color: inherit; }
   align-items: center;
   justify-content: space-between;
   gap: 32px;
+  background: rgba(255, 253, 248, .92);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border-bottom: 1px solid rgba(223, 227, 218, .85);
+}
+.site-header::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  width: 100vw;
+  transform: translateX(-50%);
+  background: rgba(255, 253, 248, .92);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border-bottom: 1px solid rgba(223, 227, 218, .85);
+  z-index: -1;
 }
 .brand { display: inline-flex; align-items: center; gap: 12px; text-decoration: none; }
 .brand-copy { display: grid; line-height: 1.05; }
@@ -49,7 +70,21 @@ a { color: inherit; }
 .signal-two { width: 20px; height: 20px; right: -3px; top: 2px; }
 nav { display: flex; gap: 28px; align-items: center; font-size: .9rem; font-weight: 650; }
 nav a { text-decoration: none; }
-.nav-cta { border: 1px solid var(--ink); border-radius: 999px; padding: 10px 16px; }
+nav a:not(.nav-cta) { position: relative; }
+nav a:not(.nav-cta)::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 100%;
+  bottom: -6px;
+  height: 2px;
+  background: var(--avocado);
+  transition: right .2s ease;
+}
+nav a:not(.nav-cta):hover::after,
+nav a:not(.nav-cta):focus-visible::after { right: 0; }
+.nav-cta { border: 1px solid var(--ink); border-radius: 999px; padding: 10px 16px; transition: background .2s ease, color .2s ease; }
+.nav-cta:hover, .nav-cta:focus-visible { background: var(--ink); color: white; }
 .hero { min-height: 670px; display: grid; grid-template-columns: 1.12fr .88fr; gap: 70px; align-items: center; padding-block: 72px 100px; }
 .eyebrow, .section-kicker { text-transform: uppercase; letter-spacing: .15em; font-size: .72rem; font-weight: 800; color: var(--avocado); margin: 0 0 18px; }
 h1, h2, h3, p { margin-top: 0; }
@@ -119,6 +154,7 @@ h1 span { color: var(--avocado); }
   .cta { align-items: start; flex-direction: column; }
 }
 @media (max-width: 600px) {
+  html { scroll-padding-top: 94px; }
   .shell, .site-header { width: min(100% - 28px, var(--max)); }
   .site-header { min-height: 78px; }
   .brand-copy small { display: none; }
