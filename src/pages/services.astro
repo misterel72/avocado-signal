@@ -1,0 +1,73 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const services = [
+  {
+    number: '01',
+    title: 'Small business websites',
+    intro: 'A credible, fast home on the web without an enterprise-sized platform hiding underneath it.',
+    text: 'Ideal for independent businesses, local services and growing organisations that need to explain what they do clearly, build trust quickly and make it easy for customers to get in touch.',
+    includes: ['Responsive design', 'Clear page structure', 'Performance-focused build', 'Basic search setup', 'Launch support']
+  },
+  {
+    number: '02',
+    title: 'Refresh & rescue',
+    intro: 'Keep what works. Remove what does not. Make the whole thing feel useful again.',
+    text: 'For existing sites that have become slow, cluttered, dated or difficult to update. We strip the experience back to what customers actually need and rebuild around that.',
+    includes: ['Content and structure review', 'Visual refresh', 'Mobile improvements', 'Performance clean-up', 'Migration planning']
+  },
+  {
+    number: '03',
+    title: 'Hosting & launch',
+    intro: 'The unglamorous technical bits handled without turning them into a mystery.',
+    text: 'We can help connect domains, deploy the finished site and set up lightweight hosting so launch day does not end with a ZIP file and an awkward silence.',
+    includes: ['Domain connection', 'Static deployment', 'SSL setup', 'Carbon-conscious hosting options', 'Handover guidance']
+  }
+];
+---
+
+<BaseLayout
+  title="Services | Avocado Signal"
+  description="Web design, website refresh and lightweight hosting services from Avocado Signal."
+  currentPath="/services"
+>
+  <section class="page-hero shell">
+    <p class="eyebrow">Services</p>
+    <h1>Useful web design.<br /><span>Without the agency fog.</span></h1>
+    <p class="page-intro">A small set of focused services for businesses that need a better website, not another software subscription to manage.</p>
+  </section>
+
+  <section class="service-list shell">
+    {services.map((service) => (
+      <article class="service-detail">
+        <div class="service-detail-number">{service.number}</div>
+        <div class="service-detail-copy">
+          <h2>{service.title}</h2>
+          <p class="service-lead">{service.intro}</p>
+          <p>{service.text}</p>
+        </div>
+        <div class="service-includes">
+          <p class="section-kicker">Typically includes</p>
+          <ul>
+            {service.includes.map((item) => <li>{item}</li>)}
+          </ul>
+        </div>
+      </article>
+    ))}
+  </section>
+
+  <section class="quote-band">
+    <div class="shell quote-band-inner">
+      <p class="section-kicker light">Simple by default</p>
+      <h2>We would rather build the five things your website needs well than sell you twenty things it does not.</h2>
+    </div>
+  </section>
+
+  <section class="cta shell">
+    <div>
+      <p class="section-kicker light">Not sure which service fits?</p>
+      <h2>Tell us what is not working.</h2>
+    </div>
+    <a class="button button-light" href="mailto:hello@avocadosignal.com">Start a conversation</a>
+  </section>
+</BaseLayout>
