@@ -1,0 +1,74 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const steps = [
+  ['Talk', 'We learn what the business actually needs, who the site is for and what success should look like.'],
+  ['Build', 'A focused first version is designed and built quickly, with clear feedback points instead of endless meetings.'],
+  ['Launch', 'We publish, connect the domain and make sure the finished site is fast, responsive and easy to live with.']
+];
+---
+
+<BaseLayout
+  title="About | Avocado Signal"
+  description="The thinking behind Avocado Signal: straightforward, lightweight web design with a lighter digital footprint."
+  currentPath="/about"
+>
+  <section class="page-hero shell">
+    <p class="eyebrow">About Avocado Signal</p>
+    <h1>Less digital clutter.<br /><span>More useful signal.</span></h1>
+    <p class="page-intro">Avocado Signal is built around a fairly unfashionable idea: a business website should be straightforward, useful and easy to own.</p>
+  </section>
+
+  <section class="manifesto">
+    <div class="shell manifesto-grid">
+      <p class="section-kicker">Why we exist</p>
+      <div>
+        <h2>Your website should help your business.<br />Not become another job.</h2>
+        <p>Small businesses are routinely sold websites with more machinery than they need. More plugins, more dashboards, more subscriptions and more things waiting to break. We prefer to start with the customer, the message and the action the site needs to support.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section shell split-section about-split">
+    <div class="eco-panel">
+      <p class="section-kicker light">Lighter by design</p>
+      <h2>Efficiency is part of the design, not an afterthought.</h2>
+      <p>A lean website transfers less data, uses fewer resources and usually feels faster too. Sustainability is not a decorative leaf icon here. It is one of the constraints that helps us make better decisions.</p>
+      <ul>
+        <li>Static-first architecture</li>
+        <li>Optimised assets</li>
+        <li>Minimal third-party scripts</li>
+        <li>Carbon-conscious hosting options</li>
+      </ul>
+    </div>
+
+    <div class="process-panel">
+      <p class="section-kicker">How we work</p>
+      <div class="steps">
+        {steps.map(([title, text], index) => (
+          <div class="step">
+            <span>0{index + 1}</span>
+            <div><h3>{title}</h3><p>{text}</p></div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="principles shell">
+    <p class="section-kicker">A few rules we like</p>
+    <div class="principle-grid">
+      <article><h3>Clarity beats cleverness.</h3><p>People should understand what a business does before they have time to admire the animation.</p></article>
+      <article><h3>Speed is a feature.</h3><p>A page that arrives quickly is better for customers, search engines and the amount of infrastructure needed to serve it.</p></article>
+      <article><h3>Own less technology.</h3><p>If a simple static site solves the problem, we will not invent a reason to add a database, CMS or plugin stack.</p></article>
+    </div>
+  </section>
+
+  <section class="cta shell">
+    <div>
+      <p class="section-kicker light">Sound like your sort of approach?</p>
+      <h2>Let’s give your business a signal.</h2>
+    </div>
+    <a class="button button-light" href="mailto:hello@avocadosignal.com">Start a project</a>
+  </section>
+</BaseLayout>
