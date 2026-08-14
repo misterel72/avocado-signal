@@ -1,0 +1,167 @@
+---
+import '../styles/global.css';
+
+const services = [
+  {
+    number: '01',
+    title: 'Small business websites',
+    text: 'Fast, focused sites for businesses that need a credible home on the web without paying for a bloated digital ecosystem.'
+  },
+  {
+    number: '02',
+    title: 'Refresh & rescue',
+    text: 'Already have a website that feels tired, confusing or painfully 2014? We can simplify it, sharpen it and make it useful again.'
+  },
+  {
+    number: '03',
+    title: 'Hosting & launch',
+    text: 'Domain, deployment and lightweight hosting can be handled too, so you are not left holding a folder of files and a puzzled expression.'
+  }
+];
+
+const steps = [
+  ['Talk', 'We learn what the business actually needs, who the site is for and what success looks like.'],
+  ['Build', 'A focused first version is designed and built quickly, with clear feedback points rather than endless meetings.'],
+  ['Launch', 'We publish, connect the domain and make sure the finished site is fast, responsive and easy to maintain.']
+];
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="description" content="Avocado Signal builds sharp, lightweight websites for small businesses." />
+    <meta name="theme-color" content="#173b2d" />
+    <title>Avocado Signal | Websites that work harder and weigh less</title>
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="#top" aria-label="Avocado Signal home">
+        <span class="brand-mark" aria-hidden="true">
+          <span class="avocado-body"><span class="avocado-pit"></span></span>
+          <span class="signal-line signal-one"></span>
+          <span class="signal-line signal-two"></span>
+        </span>
+        <span class="brand-copy">
+          <strong>Avocado Signal</strong>
+          <small>Good websites. Lighter footprint.</small>
+        </span>
+      </a>
+
+      <nav aria-label="Primary navigation">
+        <a href="#services">Services</a>
+        <a href="#approach">Approach</a>
+        <a href="#contact" class="nav-cta">Start a project</a>
+      </nav>
+    </header>
+
+    <main id="top">
+      <section class="hero shell">
+        <div class="hero-copy">
+          <p class="eyebrow">Independent web studio · Built for small business</p>
+          <h1>Websites that work harder<br /><span>and weigh less.</span></h1>
+          <p class="hero-intro">
+            Avocado Signal builds clean, fast websites for businesses that need to look established online without buying a monster platform they will never use.
+          </p>
+          <div class="hero-actions">
+            <a class="button button-primary" href="#contact">Tell us what you need</a>
+            <a class="text-link" href="#services">See what we build <span>↓</span></a>
+          </div>
+          <div class="proof-strip" aria-label="Key benefits">
+            <span>Fast by default</span>
+            <span>Mobile first</span>
+            <span>Low-code footprint</span>
+            <span>No unnecessary bloat</span>
+          </div>
+        </div>
+
+        <div class="hero-card" aria-hidden="true">
+          <div class="browser-bar">
+            <i></i><i></i><i></i>
+            <span>yourbusiness.com</span>
+          </div>
+          <div class="mock-site">
+            <div class="mock-brand">YOUR BUSINESS</div>
+            <div class="mock-line long"></div>
+            <div class="mock-line medium"></div>
+            <div class="mock-button"></div>
+            <div class="mock-grid">
+              <div></div><div></div><div></div>
+            </div>
+          </div>
+          <div class="eco-chip">Lightweight build</div>
+        </div>
+      </section>
+
+      <section class="manifesto">
+        <div class="shell manifesto-grid">
+          <p class="section-kicker">The simple idea</p>
+          <div>
+            <h2>Your website should help your business.<br />Not become another job.</h2>
+            <p>Most small organisations do not need layers of plugins, dashboards and subscriptions. They need a site that loads quickly, explains what they do, builds trust and makes it easy for a customer to take the next step.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section shell" id="services">
+        <div class="section-heading">
+          <p class="section-kicker">What we do</p>
+          <h2>Useful web design.<br />Without the agency fog.</h2>
+        </div>
+        <div class="service-grid">
+          {services.map((service) => (
+            <article class="service-card">
+              <span>{service.number}</span>
+              <h3>{service.title}</h3>
+              <p>{service.text}</p>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <section class="section shell split-section" id="approach">
+        <div class="eco-panel">
+          <p class="section-kicker light">Lighter by design</p>
+          <h2>Less digital clutter is good for people and better for the planet.</h2>
+          <p>A lean website transfers less data, needs less infrastructure and usually feels faster too. Sustainability here is not a decorative leaf icon. It is a design constraint.</p>
+          <ul>
+            <li>Static-first architecture</li>
+            <li>Optimised assets</li>
+            <li>Minimal third-party scripts</li>
+            <li>Carbon-conscious hosting options</li>
+          </ul>
+        </div>
+
+        <div class="process-panel">
+          <p class="section-kicker">How it works</p>
+          <div class="steps">
+            {steps.map(([title, text], index) => (
+              <div class="step">
+                <span>0{index + 1}</span>
+                <div><h3>{title}</h3><p>{text}</p></div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section class="cta shell" id="contact">
+        <div>
+          <p class="section-kicker light">Have a business. Need a better site?</p>
+          <h2>Let’s give it a signal.</h2>
+        </div>
+        <a class="button button-light" href="mailto:hello@avocadosignal.com">hello@avocadosignal.com</a>
+      </section>
+    </main>
+
+    <footer class="site-footer shell">
+      <div class="footer-brand">
+        <span class="mini-avocado" aria-hidden="true"></span>
+        <strong>Avocado Signal</strong>
+      </div>
+      <p>Lean websites for real businesses.</p>
+      <p>© {new Date().getFullYear()} Avocado Signal</p>
+    </footer>
+  </body>
+</html>
