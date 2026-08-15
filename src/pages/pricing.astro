@@ -1,0 +1,329 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const sharedIncludes = [
+  'Planning conversation with Ivan',
+  'Design shaped around your business',
+  'Mobile, tablet and desktop layouts',
+  'Copy shaping from your notes',
+  'Email, WhatsApp and contact links',
+  'Essential search setup',
+  'Performance and accessibility checks',
+  'Domain connection and secure launch',
+  'Two rounds of revisions',
+  '30 days of post-launch support'
+];
+
+const extras = [
+  ['Additional page', '£150'],
+  ['Original copywriting from a blank page', '£150 per page'],
+  ['Additional print item, such as a flyer or appointment card', '£75'],
+  ['Social profile pack for up to two platforms', '£95'],
+  ['Google Business Profile setup', '£150'],
+  ['Booking-tool integration', '£100'],
+  ['Professional mailbox setup', '£50 plus provider cost'],
+  ['Changes after the support period', '£50 per hour'],
+  ['Additional revision round during the build', '£75']
+];
+
+const faqs = [
+  {
+    question: 'Will the price change once we start?',
+    answer: 'Not unless you ask for something outside the agreed package. If the scope changes, you will see and approve the exact additional cost before any extra work begins.'
+  },
+  {
+    question: 'What counts as a page?',
+    answer: 'A page is a separate part of the website with its own address, such as Home, About, Services or Contact. A long one-page website can contain several sections while still counting as one page.'
+  },
+  {
+    question: 'Who writes the words?',
+    answer: 'You can provide finished copy or rough notes. Shaping, shortening and improving your supplied material is included. If you need original copy written from a blank page, it is £150 per page.'
+  },
+  {
+    question: 'Can you design a logo if I do not have one?',
+    answer: 'Yes. The £295 Logo Starter includes two initial design routes, two rounds of revisions, useful logo variations, a colour palette, type choices, a favicon and a proper file pack. It is a practical identity for a small business, not an open-ended corporate branding exercise.'
+  },
+  {
+    question: 'Do I have to use Avocado Signal for hosting?',
+    answer: 'No. The £180 annual care plan is optional. We can hand the finished website over or help move it later. Your domain remains yours either way.'
+  },
+  {
+    question: 'How long will the build take?',
+    answer: 'A one-page site normally takes one to two weeks. A five-page site normally takes two to three weeks. This starts once the brief and the material we need are ready.'
+  },
+  {
+    question: 'Does essential search setup guarantee a Google ranking?',
+    answer: 'No. It gives search engines a clean, understandable website to index. Ongoing SEO campaigns and guaranteed rankings are not included, because nobody can honestly guarantee where Google will place a website.'
+  }
+];
+
+const offerSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'OfferCatalog',
+  name: 'Avocado Signal website pricing',
+  itemListElement: [
+    {
+      '@type': 'Offer',
+      priceCurrency: 'GBP',
+      price: '495',
+      itemOffered: { '@type': 'Service', name: 'One-page small business website' }
+    },
+    {
+      '@type': 'Offer',
+      priceCurrency: 'GBP',
+      price: '995',
+      itemOffered: { '@type': 'Service', name: 'Five-page small business website' }
+    },
+    {
+      '@type': 'Offer',
+      priceCurrency: 'GBP',
+      price: '180',
+      itemOffered: { '@type': 'Service', name: 'Annual website hosting and care' }
+    },
+    {
+      '@type': 'Offer',
+      priceCurrency: 'GBP',
+      price: '295',
+      itemOffered: { '@type': 'Service', name: 'Logo Starter' }
+    },
+    {
+      '@type': 'Offer',
+      priceCurrency: 'GBP',
+      price: '195',
+      itemOffered: { '@type': 'Service', name: 'Business Essentials artwork pack' }
+    },
+    {
+      '@type': 'Offer',
+      priceCurrency: 'GBP',
+      price: '445',
+      itemOffered: { '@type': 'Service', name: 'Complete Starter Identity' }
+    }
+  ]
+};
+
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: faqs.map((faq) => ({
+    '@type': 'Question',
+    name: faq.question,
+    acceptedAnswer: { '@type': 'Answer', text: faq.answer }
+  }))
+};
+---
+
+<BaseLayout
+  title="Website Pricing | Avocado Signal"
+  description="Clear website pricing from Avocado Signal: £495 for a one-page website, £995 for a five-page small business website and no hidden extras."
+  currentPath="/pricing"
+>
+  <script type="application/ld+json" set:html={JSON.stringify(offerSchema)} />
+  <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+
+  <section class="page-hero shell pricing-hero">
+    <p class="eyebrow">Clear pricing</p>
+    <h1>A proper website.<br /><span>A price you can see.</span></h1>
+    <p class="page-intro">No compulsory monthly package, no vague “starting from” figure and no surprise invoice at the end. Choose the size of website you need and know what it will cost before we begin.</p>
+  </section>
+
+  <section class="pricing-packages shell" aria-labelledby="packages-heading">
+    <div class="pricing-section-heading">
+      <div>
+        <p class="section-kicker">Fixed-price websites</p>
+        <h2 id="packages-heading">Two sensible places to start.</h2>
+      </div>
+      <p>Both are designed, built and launched by Ivan. The difference is simply how much room your business needs.</p>
+    </div>
+
+    <div class="pricing-cards">
+      <article class="price-card">
+        <p class="price-label">One-page website</p>
+        <div class="price"><span>£</span>495</div>
+        <p class="price-summary">A focused scrolling website for a new business, sole trader or straightforward service.</p>
+        <ul>
+          <li>One page with up to six sections</li>
+          <li>Space for services, trust, contact and calls to action</li>
+          <li>Everything in the standard build list below</li>
+        </ul>
+        <a class="button button-outline" href="mailto:hello@avocadosignal.co.uk?subject=One-page%20website">Choose one page</a>
+      </article>
+
+      <article class="price-card featured">
+        <p class="popular-label">Most popular</p>
+        <p class="price-label">Five-page website</p>
+        <div class="price"><span>£</span>995</div>
+        <p class="price-summary">A complete small-business website with proper space to explain what you do and why customers should trust you.</p>
+        <ul>
+          <li>Up to five separate pages</li>
+          <li>Ideal for Home, About, Services, Work and Contact</li>
+          <li>Everything in the standard build list below</li>
+        </ul>
+        <a class="button button-light" href="mailto:hello@avocadosignal.co.uk?subject=Five-page%20website">Choose five pages</a>
+      </article>
+    </div>
+
+    <p class="pricing-math"><strong>Need more room?</strong> Additional pages are £150 each. Six pages cost £1,145. Eight pages cost £1,445. No calculator gymnastics required.</p>
+  </section>
+
+  <section class="pricing-included">
+    <div class="shell">
+      <div class="pricing-section-heading compact">
+        <div>
+          <p class="section-kicker">Included as standard</p>
+          <h2>A finished website, not a folder of loose parts.</h2>
+        </div>
+        <p>These essentials are included in both fixed-price packages.</p>
+      </div>
+      <ul class="included-grid">
+        {sharedIncludes.map((item) => <li>{item}</li>)}
+      </ul>
+    </div>
+  </section>
+
+  <section class="brand-pricing-section shell" aria-labelledby="identity-heading">
+    <div class="pricing-section-heading">
+      <div>
+        <p class="section-kicker">Logo and business essentials</p>
+        <h2 id="identity-heading">Starting without a visual identity?</h2>
+      </div>
+      <p>We can carry the same clear visual system from your website into the everyday things your customers see.</p>
+    </div>
+
+    <div class="brand-pricing-cards">
+      <article class="brand-price-card">
+        <p class="price-label">Logo Starter</p>
+        <div class="brand-price"><span>£</span>295</div>
+        <p>For a new business that needs a useful, recognisable identity without commissioning a full agency branding project.</p>
+        <ul>
+          <li>Two initial logo routes</li>
+          <li>Two rounds of revisions</li>
+          <li>Primary, horizontal, stacked and one-colour versions</li>
+          <li>Colour palette and type choices</li>
+          <li>Favicon and profile mark</li>
+          <li>SVG, PDF and PNG file pack</li>
+        </ul>
+      </article>
+
+      <article class="brand-price-card">
+        <p class="price-label">Business Essentials</p>
+        <div class="brand-price"><span>£</span>195</div>
+        <p>For a business that already has a logo and wants its useful everyday material to look properly joined up.</p>
+        <ul>
+          <li>Double-sided business card</li>
+          <li>Editable A4 letterhead template</li>
+          <li>Branded email signature</li>
+          <li>Print-ready artwork files</li>
+          <li>Two rounds of revisions</li>
+        </ul>
+      </article>
+
+      <article class="brand-price-card featured">
+        <p class="saving-label">Save £45</p>
+        <p class="price-label">Complete Starter Identity</p>
+        <div class="brand-price"><span>£</span>445</div>
+        <p>Everything in the Logo Starter and Business Essentials packages, created as one consistent set.</p>
+        <ul>
+          <li>Complete logo and file pack</li>
+          <li>Colour and type system</li>
+          <li>Business card</li>
+          <li>Editable letterhead</li>
+          <li>Email signature</li>
+        </ul>
+      </article>
+    </div>
+
+    <p class="pricing-math"><strong>About printing:</strong> print-ready artwork is included. We can help prepare the first online order. Printing and delivery are charged by the chosen supplier at its quoted cost.</p>
+  </section>
+
+  <section class="pricing-section shell" aria-labelledby="extras-heading">
+    <div class="pricing-section-heading">
+      <div>
+        <p class="section-kicker">Optional extras</p>
+        <h2 id="extras-heading">Every extra. Every price.</h2>
+      </div>
+      <p>If you need one of these, it appears on the agreed quote before work begins. If you do not need it, you do not pay for it.</p>
+    </div>
+    <dl class="extras-list">
+      {extras.map(([name, price]) => (
+        <div class="extra-row">
+          <dt>{name}</dt>
+          <dd>{price}</dd>
+        </div>
+      ))}
+    </dl>
+    <p class="small-print">Changes after launch are billed in 30-minute blocks. Any external subscription or provider fee is shown separately and approved before purchase.</p>
+  </section>
+
+  <section class="care-section">
+    <div class="shell care-grid">
+      <div class="care-copy">
+        <p class="section-kicker">After launch</p>
+        <h2>Stay with us, or take the keys.</h2>
+        <p>The annual care plan is optional. Keep the website with Avocado Signal and we will look after the technical side, or take the finished site elsewhere. There is no cancellation penalty and no hostage situation involving your domain.</p>
+      </div>
+      <article class="care-card">
+        <p class="price-label">Hosting and care</p>
+        <div class="price"><span>£</span>180 <small>/ year</small></div>
+        <ul>
+          <li>Managed hosting and SSL</li>
+          <li>Uptime monitoring</li>
+          <li>Technical maintenance and restore points</li>
+          <li>Two small text or image updates each year</li>
+          <li>Email support</li>
+        </ul>
+        <p><strong>Domain:</strong> paid directly by you at the registrar’s actual price. It remains in your name.</p>
+      </article>
+    </div>
+  </section>
+
+  <section class="pricing-section shell terms-section">
+    <div class="pricing-section-heading">
+      <div>
+        <p class="section-kicker">The arrangement</p>
+        <h2>Simple terms. No small-print ambush.</h2>
+      </div>
+    </div>
+    <div class="terms-grid">
+      <article>
+        <span>01</span>
+        <h3>Payment</h3>
+        <p>50% books the project. The remaining 50% is due when the agreed website is approved and ready to launch.</p>
+      </article>
+      <article>
+        <span>02</span>
+        <h3>Ownership</h3>
+        <p>Once the final invoice is paid, the finished website and its content belong to you. The domain stays in your own account from day one.</p>
+      </article>
+      <article>
+        <span>03</span>
+        <h3>Scope</h3>
+        <p>E-commerce, memberships, custom databases and complex booking systems are not included in these packages. We will scope and price them separately before work starts.</p>
+      </article>
+    </div>
+  </section>
+
+  <section class="faq-section shell" aria-labelledby="faq-heading">
+    <div class="pricing-section-heading">
+      <div>
+        <p class="section-kicker">Questions worth asking</p>
+        <h2 id="faq-heading">Before you spend anything.</h2>
+      </div>
+    </div>
+    <div class="faq-list">
+      {faqs.map((faq) => (
+        <details>
+          <summary>{faq.question}</summary>
+          <p>{faq.answer}</p>
+        </details>
+      ))}
+    </div>
+  </section>
+
+  <section class="cta shell" id="contact">
+    <div>
+      <p class="section-kicker light">Know what you need?</p>
+      <h2>Let’s give it a signal.</h2>
+    </div>
+    <a class="button button-light" href="mailto:hello@avocadosignal.co.uk?subject=Website%20project">Start a conversation</a>
+  </section>
+</BaseLayout>
