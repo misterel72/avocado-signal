@@ -1,0 +1,104 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const serviceAreas = ['Watchet', 'Minehead', 'Taunton', 'Bridgwater', 'Dulverton', 'West Somerset'];
+
+const pageSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Service',
+  name: 'Small business web design in Somerset',
+  provider: { '@id': 'https://avocadosignal.co.uk/#organisation' },
+  url: 'https://avocadosignal.co.uk/web-design-somerset',
+  serviceType: 'Web design',
+  areaServed: serviceAreas.map((name) => ({ '@type': 'Place', name })),
+  audience: {
+    '@type': 'BusinessAudience',
+    audienceType: 'Small businesses, sole traders and local service businesses'
+  }
+};
+---
+
+<BaseLayout
+  title="Web Design Somerset for Small Businesses | Avocado Signal"
+  description="Straightforward, lightweight web design for small businesses, sole traders and trades across Somerset, including Watchet, Minehead, Taunton and Bridgwater."
+  currentPath="/web-design-somerset"
+>
+  <script type="application/ld+json" set:html={JSON.stringify(pageSchema)} />
+
+  <section class="page-hero shell">
+    <p class="eyebrow">Web design for Somerset</p>
+    <h1>Look established.<br /><span>Get found locally.</span></h1>
+    <p class="page-intro">Avocado Signal creates clear, fast websites for Somerset businesses that need a stronger online presence without agency overheads, jargon or a monthly software obstacle course.</p>
+  </section>
+
+  <section class="service-list shell">
+    <article class="service-detail">
+      <div class="service-detail-number">01</div>
+      <div class="service-detail-copy">
+        <h2>A website shaped around the business.</h2>
+        <p class="service-lead">Not a generic template with your logo parked in the corner.</p>
+        <p>We build around your services, photographs, customers and service area. The result should feel like your business, explain its value quickly and make the next step obvious on a phone.</p>
+      </div>
+      <div class="service-includes">
+        <p class="section-kicker">Useful for</p>
+        <ul>
+          <li>Independent trades</li>
+          <li>Local service businesses</li>
+          <li>Newly registered companies</li>
+          <li>Established firms with tired websites</li>
+        </ul>
+      </div>
+    </article>
+
+    <article class="service-detail">
+      <div class="service-detail-number">02</div>
+      <div class="service-detail-copy">
+        <h2>Somerset signals that make sense.</h2>
+        <p class="service-lead">Google cannot infer a service area from a handsome colour palette.</p>
+        <p>We give search engines clear information about what you do, the places you serve and how customers can contact you. Where appropriate, we can also help connect the site with a properly configured Google Business Profile.</p>
+      </div>
+      <div class="service-includes">
+        <p class="section-kicker">Search foundations</p>
+        <ul>
+          <li>Clear page titles and descriptions</li>
+          <li>Structured business information</li>
+          <li>Fast, mobile-first pages</li>
+          <li>Google Search Console setup</li>
+        </ul>
+      </div>
+    </article>
+
+    <article class="service-detail">
+      <div class="service-detail-number">03</div>
+      <div class="service-detail-copy">
+        <h2>Local knowledge. UK-wide standards.</h2>
+        <p class="service-lead">Working with businesses across Watchet, Minehead, Taunton, Bridgwater, Dulverton and the wider county.</p>
+        <p>The website can stay focused on the real area you serve while still being built to modern standards for speed, accessibility, security and search. No invented offices and no twenty near-identical town pages.</p>
+      </div>
+      <div class="service-includes">
+        <p class="section-kicker">From</p>
+        <ul>
+          <li><a href="/pricing">£495 for a one-page website</a></li>
+          <li><a href="/pricing">£995 for up to five pages</a></li>
+          <li>Clear optional extras</li>
+          <li>No compulsory monthly package</li>
+        </ul>
+      </div>
+    </article>
+  </section>
+
+  <section class="quote-band">
+    <div class="shell quote-band-inner">
+      <p class="section-kicker light">Clear from the beginning</p>
+      <h2>Tell people what you do, where you do it and why they should trust you.</h2>
+    </div>
+  </section>
+
+  <section class="cta shell" id="contact">
+    <div>
+      <p class="section-kicker light">Based in Somerset or serving it?</p>
+      <h2>Let’s make the business easier to find.</h2>
+    </div>
+    <a class="button button-light" href="mailto:hello@avocadosignal.co.uk?subject=Somerset%20website%20project">Email Ivan</a>
+  </section>
+</BaseLayout>
