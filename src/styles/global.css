@@ -101,7 +101,7 @@ h1 span { color: var(--avocado); }
 .hero-actions { display: flex; gap: 24px; align-items: center; margin-top: 34px; flex-wrap: wrap; }
 .button { display: inline-flex; justify-content: center; align-items: center; min-height: 48px; padding: 0 20px; border-radius: 999px; text-decoration: none; font-weight: 800; }
 .button-primary { background: var(--ink); color: white; }
-.button-light { background: var(--paper); white-space: nowrap; }
+.button-light { background: var(--paper); color: var(--ink); white-space: nowrap; }
 .text-link { display: inline-block; font-weight: 750; text-decoration: none; border-bottom: 1px solid var(--line); padding-bottom: 4px; }
 .proof-strip { display: flex; flex-wrap: wrap; gap: 10px 20px; margin-top: 42px; color: var(--muted); font-size: .82rem; }
 .proof-strip span::before { content: '✓'; color: var(--avocado); margin-right: 7px; font-weight: 900; }
