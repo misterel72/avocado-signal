@@ -21,6 +21,7 @@ const isActive = (path: string) => currentPath === path;
   <nav aria-label="Primary navigation">
     <a href="/" class:list={{ active: isActive('/') }}>Home</a>
     <a href="/services" class:list={{ active: isActive('/services') }}>Services</a>
+    <a href="/pricing" class:list={{ active: isActive('/pricing') }}>Pricing</a>
     <a href="/about" class:list={{ active: isActive('/about') }}>About</a>
     <a href="#contact" class="nav-cta">Get in touch</a>
   </nav>
