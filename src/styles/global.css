@@ -141,6 +141,38 @@ h1 span { color: var(--avocado); }
 .page-hero { padding-block: 105px 100px; }
 .page-hero h1 { max-width: 1050px; }
 .page-intro { margin-bottom: 0; }
+.founder-hero {
+  min-height: 720px;
+  display: grid;
+  grid-template-columns: 1.05fr .75fr;
+  gap: 82px;
+  align-items: center;
+  padding-block: 82px 110px;
+}
+.founder-copy h1 { font-size: clamp(3.4rem, 6.2vw, 6.4rem); }
+.founder-copy > p:not(.eyebrow) { max-width: 680px; color: #4d5a52; }
+.founder-lead { font-size: 1.22rem; font-weight: 620; line-height: 1.6; }
+.founder-actions { display: flex; align-items: center; gap: 24px; flex-wrap: wrap; margin-top: 34px; }
+.founder-portrait {
+  margin: 0;
+  padding: 14px;
+  background: var(--cream);
+  border: 1px solid #e8e1d4;
+  border-radius: 28px;
+  transform: rotate(1.5deg);
+  box-shadow: 0 30px 80px rgba(23,59,45,.1);
+}
+.founder-portrait img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  object-position: center top;
+  border-radius: 19px;
+}
+.founder-portrait figcaption { display: grid; gap: 2px; padding: 15px 8px 4px; }
+.founder-portrait figcaption strong { color: var(--ink); font-size: .96rem; }
+.founder-portrait figcaption span { color: var(--muted); font-size: .8rem; }
 .service-list { padding-bottom: 110px; }
 .service-detail { display: grid; grid-template-columns: 90px 1.25fr .75fr; gap: 44px; padding: 58px 0; border-top: 1px solid var(--line); }
 .service-detail-number { color: var(--avocado); font-size: .78rem; font-weight: 900; }
@@ -187,6 +219,8 @@ h1 span { color: var(--avocado); }
 @media (max-width: 900px) {
   .hero { grid-template-columns: 1fr; min-height: 0; padding-top: 58px; }
   .hero-card { max-width: 580px; }
+  .founder-hero { grid-template-columns: 1fr; gap: 54px; }
+  .founder-portrait { max-width: 560px; transform: rotate(1deg); }
   .manifesto-grid, .section-heading, .split-section, .home-approach-grid, .quote-band-inner { grid-template-columns: 1fr; }
   .service-grid, .principle-grid { grid-template-columns: 1fr; gap: 42px; }
   .service-detail { grid-template-columns: 60px 1fr; }
@@ -215,6 +249,11 @@ h1 span { color: var(--avocado); }
   .manifesto { padding: 70px 0; }
   .section { padding-block: 80px; }
   .page-hero { padding-block: 70px 64px; }
+  .founder-hero { min-height: 0; padding-block: 62px 80px; gap: 42px; }
+  .founder-copy h1 { font-size: clamp(3rem, 15vw, 4.8rem); }
+  .founder-lead { font-size: 1.08rem; }
+  .founder-portrait { padding: 10px; border-radius: 23px; transform: none; }
+  .founder-portrait img { border-radius: 15px; }
   .service-detail { grid-template-columns: 1fr; gap: 18px; padding: 42px 0; }
   .service-includes { grid-column: auto; }
   .quote-band { padding: 70px 0; margin-bottom: 80px; }
