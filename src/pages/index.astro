@@ -2,39 +2,59 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 
 const services = [
-  { number: '01', title: 'A clear web presence', text: 'A fast, focused website that shows people what you do and makes it easy to contact you.' },
-  { number: '02', title: 'A cleaner first impression', text: 'Strong design, simple words and no unnecessary clutter between your customer and the next step.' },
-  { number: '03', title: 'A lighter way to launch', text: 'Domain, deployment and lean hosting handled without locking you into a bloated platform.' }
+  {
+    number: '01',
+    title: 'Small business websites',
+    text: 'Fast, focused sites for businesses that need a credible home on the web without paying for a bloated digital ecosystem.'
+  },
+  {
+    number: '02',
+    title: 'Refresh & rescue',
+    text: 'Already have a website that feels tired or confusing? We can simplify it, sharpen it and make it useful again.'
+  },
+  {
+    number: '03',
+    title: 'Hosting & launch',
+    text: 'Domain, deployment and lightweight hosting can be handled too, so launch does not end with a folder of files.'
+  }
 ];
 ---
 
 <BaseLayout
-  title="Avocado Signal | Get found. Look good. Tread lightly."
-  description="Avocado Signal builds clear, fast and lightweight websites for small businesses."
+  title="Avocado Signal | Websites that work harder and weigh less"
+  description="Avocado Signal builds sharp, lightweight websites for small businesses."
   currentPath="/"
 >
   <section class="hero shell">
     <div class="hero-copy">
-      <p class="eyebrow">Straightforward websites for small businesses</p>
-      <h1>Get found.<br />Look good.<br /><span>Tread lightly.</span></h1>
-      <p class="hero-intro">Clean, fast websites that help real businesses look credible online. Clear pricing, simple communication and no agency nonsense.</p>
+      <p class="eyebrow">Independent web studio · Built for small business</p>
+      <h1>Websites that work harder<br /><span>and weigh less.</span></h1>
+      <p class="hero-intro">Avocado Signal builds clean, fast websites for businesses that need to look established online without buying a monster platform they will never use.</p>
       <div class="hero-actions">
-        <a class="button button-primary" href="mailto:hello@avocadosignal.co.uk">Email us</a>
-        <a class="button button-whatsapp" href="https://wa.me/97471670038" target="_blank" rel="noreferrer">WhatsApp</a>
-      </div>
-      <div class="contact-line">
-        <a href="mailto:hello@avocadosignal.co.uk">hello@avocadosignal.co.uk</a>
-        <span aria-hidden="true">·</span>
-        <a href="https://wa.me/97471670038" target="_blank" rel="noreferrer">+974 7167 0038</a>
+        <a class="button button-primary" href="mailto:hello@avocadosignal.co.uk">hello@avocadosignal.co.uk</a>
+        <a class="text-link" href="/services">See what we build <span>→</span></a>
       </div>
       <div class="proof-strip" aria-label="Key benefits">
-        <span>Fast by default</span><span>Mobile first</span><span>Lightweight build</span><span>Easy to own</span>
+        <span>Fast by default</span>
+        <span>Mobile first</span>
+        <span>Low-code footprint</span>
+        <span>No unnecessary bloat</span>
       </div>
     </div>
 
-    <div class="hero-logo-panel">
-      <img src="/avocado-signal-emblem.png" alt="Avocado Signal emblem" width="640" height="640" />
-      <p>Fresh websites.<br />Clear signal.</p>
+    <div class="hero-card" aria-hidden="true">
+      <div class="browser-bar">
+        <i></i><i></i><i></i>
+        <span>yourbusiness.com</span>
+      </div>
+      <div class="mock-site">
+        <div class="mock-brand">YOUR BUSINESS</div>
+        <div class="mock-line long"></div>
+        <div class="mock-line medium"></div>
+        <div class="mock-button"></div>
+        <div class="mock-grid"><div></div><div></div><div></div></div>
+      </div>
+      <div class="eco-chip">Lightweight build</div>
     </div>
   </section>
 
@@ -43,30 +63,48 @@ const services = [
       <p class="section-kicker">The simple idea</p>
       <div>
         <h2>Your website should help your business.<br />Not become another job.</h2>
-        <p>You need a site that loads quickly, explains what you do, builds trust and makes it easy for customers to take the next step. That is what we build.</p>
+        <p>Most small organisations do not need layers of plugins, dashboards and subscriptions. They need a site that loads quickly, explains what they do, builds trust and makes it easy for a customer to take the next step.</p>
       </div>
     </div>
   </section>
 
   <section class="section shell home-services">
     <div class="section-heading">
-      <p class="section-kicker">What you get</p>
-      <div><h2>Everything useful.<br />Nothing you do not need.</h2><a class="text-link" href="/services">See our services <span>→</span></a></div>
+      <p class="section-kicker">What we do</p>
+      <div>
+        <h2>Useful web design.<br />Without the agency fog.</h2>
+        <a class="text-link" href="/services">Explore all services <span>→</span></a>
+      </div>
     </div>
     <div class="service-grid">
-      {services.map((service) => <article class="service-card"><span>{service.number}</span><h3>{service.title}</h3><p>{service.text}</p></article>)}
+      {services.map((service) => (
+        <article class="service-card">
+          <span>{service.number}</span>
+          <h3>{service.title}</h3>
+          <p>{service.text}</p>
+        </article>
+      ))}
     </div>
   </section>
 
   <section class="home-approach">
     <div class="shell home-approach-grid">
-      <div><p class="section-kicker light">Lighter by design</p><h2>Less digital clutter is good for people and better for the planet.</h2></div>
-      <div><p>We keep assets lean and avoid third-party scripts unless they earn their place. The result is faster, simpler and easier to own.</p><a class="button button-light" href="/about">Our approach</a></div>
+      <div>
+        <p class="section-kicker light">Lighter by design</p>
+        <h2>Less digital clutter is good for people and better for the planet.</h2>
+      </div>
+      <div>
+        <p>We start static, keep assets lean and avoid third-party scripts unless they genuinely earn their place. The result is usually faster, simpler and easier to own.</p>
+        <a class="button button-light" href="/about">Read our approach</a>
+      </div>
     </div>
   </section>
 
   <section class="cta shell" id="contact">
-    <div><p class="section-kicker light">Ready for a clearer signal?</p><h2>Tell us about your business.</h2></div>
-    <div class="cta-actions"><a class="button button-light" href="mailto:hello@avocadosignal.co.uk">Email us</a><a class="button button-outline-light" href="https://wa.me/97471670038" target="_blank" rel="noreferrer">WhatsApp</a></div>
+    <div>
+      <p class="section-kicker light">Have a business. Need a better site?</p>
+      <h2>Let’s give it a signal.</h2>
+    </div>
+    <a class="button button-light" href="mailto:hello@avocadosignal.co.uk">hello@avocadosignal.co.uk</a>
   </section>
 </BaseLayout>

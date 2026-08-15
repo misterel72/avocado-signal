@@ -224,16 +224,3 @@ h1 span { color: var(--avocado); }
   .site-footer { grid-template-columns: 1fr; padding: 28px 0; gap: 6px; }
   .site-footer p:nth-child(2), .site-footer p:last-child { text-align: left; }
 }
-
-
-.brand-logo { width: 56px; height: 56px; object-fit: cover; border-radius: 18px; }
-.hero-logo-panel { background: var(--cream); border: 1px solid #e8e1d4; border-radius: 28px; padding: 24px; text-align: center; transform: rotate(1.5deg); box-shadow: 0 30px 80px rgba(23,59,45,.09); }
-.hero-logo-panel img { display: block; width: 100%; height: auto; border-radius: 20px; }
-.hero-logo-panel p { margin: 16px 0 4px; color: var(--ink); font-weight: 900; font-size: 1.15rem; line-height: 1.15; text-transform: uppercase; letter-spacing: .06em; }
-.button-whatsapp { border: 1px solid var(--ink); color: var(--ink); }
-.contact-line { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 18px; color: var(--muted); font-size: .9rem; }
-.contact-line a { text-underline-offset: 3px; }
-.cta-actions { display: flex; flex-wrap: wrap; gap: 12px; }
-.button-outline-light { border: 1px solid var(--ink); color: var(--ink); }
-.footer-brand img { width: 30px; height: 30px; object-fit: cover; border-radius: 9px; }
-@media (max-width: 600px) { .brand-logo { width: 46px; height: 46px; border-radius: 14px; } .hero-logo-panel { padding: 14px; } .contact-line span { display: none; } .contact-line a { width: 100%; } }
