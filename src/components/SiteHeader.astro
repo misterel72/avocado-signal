@@ -9,14 +9,10 @@ const isActive = (path: string) => currentPath === path;
 
 <header class="site-header">
   <a class="brand" href="/" aria-label="Avocado Signal home">
-    <span class="brand-mark" aria-hidden="true">
-      <span class="avocado-body"><span class="avocado-pit"></span></span>
-      <span class="signal-line signal-one"></span>
-      <span class="signal-line signal-two"></span>
-    </span>
+    <img class="brand-logo" src="/avocado-signal-emblem.png" alt="" width="56" height="56" />
     <span class="brand-copy">
       <strong>Avocado Signal</strong>
-      <small>Good websites. Lighter footprint.</small>
+      <small>Get found. Look good. Tread lightly.</small>
     </span>
   </a>
 
@@ -24,6 +20,6 @@ const isActive = (path: string) => currentPath === path;
     <a href="/" class:list={{ active: isActive('/') }}>Home</a>
     <a href="/services" class:list={{ active: isActive('/services') }}>Services</a>
     <a href="/about" class:list={{ active: isActive('/about') }}>About</a>
-    <a href="#contact" class="nav-cta">Get in touch</a>
+    <a href="mailto:hello@avocadosignal.co.uk" class="nav-cta">Email us</a>
   </nav>
 </header>
