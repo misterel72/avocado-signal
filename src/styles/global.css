@@ -137,8 +137,6 @@ h1 span { color: var(--avocado); }
 .tread-section { background: var(--cream); padding: 100px 0 110px; }
 .tread-grid { display: grid; grid-template-columns: .85fr 1.15fr; gap: 78px; align-items: start; }
 .tread-intro > p:not(.section-kicker) { color: #59645c; font-size: 1.04rem; }
-.tread-honesty { border-left: 3px solid var(--avocado); padding-left: 18px; margin: 30px 0 0; font-size: .92rem !important; }
-.tread-honesty strong { color: var(--ink); }
 .tread-points { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; }
 .tread-points article { background: var(--paper); border: 1px solid #e8e1d4; border-radius: 20px; padding: 26px; }
 .tread-points span { color: var(--avocado); font-size: .74rem; font-weight: 900; }
