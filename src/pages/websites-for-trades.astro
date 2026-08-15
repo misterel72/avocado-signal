@@ -1,0 +1,102 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const pageSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Service',
+  name: 'Website design for trades and local service businesses',
+  provider: { '@id': 'https://avocadosignal.co.uk/#organisation' },
+  url: 'https://avocadosignal.co.uk/websites-for-trades',
+  serviceType: 'Website design for trades',
+  areaServed: { '@type': 'Country', name: 'United Kingdom' },
+  audience: {
+    '@type': 'BusinessAudience',
+    audienceType: 'Plumbers, heating engineers, electricians, decorators, builders and other trades'
+  }
+};
+---
+
+<BaseLayout
+  title="Websites for Trades | Plumbers, Electricians & Decorators"
+  description="Affordable websites for UK trades, including plumbers, heating engineers, electricians, decorators and builders. Clear pricing from Avocado Signal."
+  currentPath="/websites-for-trades"
+>
+  <script type="application/ld+json" set:html={JSON.stringify(pageSchema)} />
+
+  <section class="page-hero shell">
+    <p class="eyebrow">Websites for trades</p>
+    <h1>Your work is professional.<br /><span>Your web presence should be too.</span></h1>
+    <p class="page-intro">Web design for plumbers, heating engineers, electricians, decorators, builders and independent trades that are excellent at the actual job but rather harder to find online.</p>
+  </section>
+
+  <section class="service-list shell">
+    <article class="service-detail">
+      <div class="service-detail-number">01</div>
+      <div class="service-detail-copy">
+        <h2>Show the work properly.</h2>
+        <p class="service-lead">Real projects, useful reviews and a clear list of services do more than stock photographs of somebody holding a spanner.</p>
+        <p>We turn the material you already have into a convincing, mobile-first website that helps a customer understand what you do and feel confident enough to get in touch.</p>
+      </div>
+      <div class="service-includes">
+        <p class="section-kicker">The essentials</p>
+        <ul>
+          <li>Services and service area</li>
+          <li>Project photographs</li>
+          <li>Genuine customer reviews</li>
+          <li>Qualifications and registrations</li>
+          <li>Simple phone, email and WhatsApp contact</li>
+        </ul>
+      </div>
+    </article>
+
+    <article class="service-detail">
+      <div class="service-detail-number">02</div>
+      <div class="service-detail-copy">
+        <h2>Build one joined-up presence.</h2>
+        <p class="service-lead">Logo, website, Google Search and Maps should look like the same business.</p>
+        <p>If you are starting without a visual identity, we can create practical logo routes first. The selected identity then carries into the website and the everyday material customers see. For eligible local firms, we can also help configure a Google Business Profile.</p>
+      </div>
+      <div class="service-includes">
+        <p class="section-kicker">Available together</p>
+        <ul>
+          <li>Logo and visual identity</li>
+          <li>One-page or multi-page website</li>
+          <li>Business cards and letterhead</li>
+          <li>Google Business Profile setup</li>
+        </ul>
+      </div>
+    </article>
+
+    <article class="service-detail">
+      <div class="service-detail-number">03</div>
+      <div class="service-detail-copy">
+        <h2>Simple prices. No digital smoke machine.</h2>
+        <p class="service-lead">A focused one-page trade website starts at £495. A small five-page site is £995.</p>
+        <p>Both include the design, mobile layout, essential search setup, domain connection and launch. Optional branding, Google Business Profile setup and annual care are priced separately and clearly.</p>
+      </div>
+      <div class="service-includes">
+        <p class="section-kicker">Next step</p>
+        <ul>
+          <li><a href="/pricing">See every website price</a></li>
+          <li><a href="/services">Explore all services</a></li>
+          <li><a href="/about">Meet Ivan</a></li>
+        </ul>
+      </div>
+    </article>
+  </section>
+
+  <section class="quote-band">
+    <div class="shell quote-band-inner">
+      <p class="section-kicker light">Built for the real customer journey</p>
+      <h2>They search. They check. They decide whether to call.</h2>
+    </div>
+  </section>
+
+  <section class="cta shell" id="contact">
+    <div>
+      <p class="section-kicker light">Good at the trade. Invisible online?</p>
+      <h2>Let’s fix the second part.</h2>
+    </div>
+    <a class="button button-light" href="mailto:hello@avocadosignal.co.uk?subject=Trade%20website%20project">Email Ivan</a>
+  </section>
+</BaseLayout>

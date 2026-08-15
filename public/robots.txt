@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://avocadosignal.co.uk/sitemap.xml
