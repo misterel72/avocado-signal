@@ -59,6 +59,9 @@ const services = [
           <h2>{service.title}</h2>
           <p class="service-lead">{service.intro}</p>
           <p>{service.text}</p>
+          {service.number === '01' && (
+            <a class="text-link" href="/small-business-web-design">Explore small business web design <span>→</span></a>
+          )}
         </div>
         <div class="service-includes">
           <p class="section-kicker">Typically includes</p>
