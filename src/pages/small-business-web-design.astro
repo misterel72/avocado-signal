@@ -1,0 +1,223 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const faqs = [
+  {
+    question: 'How much does a small business website cost?',
+    answer: 'Avocado Signal offers a focused one-page small business website for £495 and a five-page website for £995. Both include design, mobile layouts, essential search setup, domain connection and launch support.'
+  },
+  {
+    question: 'Do I own my website?',
+    answer: 'Yes. Once the final invoice is paid, the finished website and its content belong to you. Your domain stays in your own account from day one.'
+  },
+  {
+    question: 'Can you arrange the domain and hosting?',
+    answer: 'Yes. We can help connect your domain and launch the website. Managed hosting and care is available for £180 per year, but it is optional and you can take the website elsewhere.'
+  },
+  {
+    question: 'Will my website work properly on phones?',
+    answer: 'Yes. Every site is designed for mobile, tablet and desktop. For many small businesses, the phone version is the most important because that is where customers first search, check and make contact.'
+  },
+  {
+    question: 'Is SEO included?',
+    answer: 'Every build includes essential search setup such as useful page titles, descriptions, readable structure, technical indexing foundations and performance checks. This gives search engines a clean website to understand, but it does not pretend to guarantee a particular Google ranking.'
+  },
+  {
+    question: 'Can you redesign an existing small business website?',
+    answer: 'Yes. If your current site feels dated, slow or confusing, we can review what is worth keeping and rebuild the experience around what customers actually need.'
+  },
+  {
+    question: 'Do you work with businesses outside Somerset?',
+    answer: 'Yes. Avocado Signal works with small businesses across the UK. Somerset is home territory, not a boundary.'
+  }
+];
+
+const serviceSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Service',
+  name: 'Small business web design UK',
+  provider: { '@id': 'https://avocadosignal.co.uk/#organisation' },
+  url: 'https://avocadosignal.co.uk/small-business-web-design',
+  serviceType: 'Small business web design',
+  areaServed: { '@type': 'Country', name: 'United Kingdom' },
+  audience: {
+    '@type': 'BusinessAudience',
+    audienceType: 'Small businesses, sole traders, independent trades and local service businesses'
+  },
+  offers: [
+    {
+      '@type': 'Offer',
+      priceCurrency: 'GBP',
+      price: '495',
+      itemOffered: { '@type': 'Service', name: 'One-page small business website' }
+    },
+    {
+      '@type': 'Offer',
+      priceCurrency: 'GBP',
+      price: '995',
+      itemOffered: { '@type': 'Service', name: 'Five-page small business website' }
+    }
+  ]
+};
+
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: faqs.map((faq) => ({
+    '@type': 'Question',
+    name: faq.question,
+    acceptedAnswer: { '@type': 'Answer', text: faq.answer }
+  }))
+};
+---
+
+<BaseLayout
+  title="Small Business Web Design UK | Avocado Signal"
+  description="Small business web design for UK businesses and sole traders. Fast, mobile-first websites from £495, with clear pricing, essential SEO and no compulsory monthly package."
+  currentPath="/small-business-web-design"
+>
+  <script type="application/ld+json" set:html={JSON.stringify(serviceSchema)} />
+  <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+
+  <section class="page-hero shell">
+    <p class="eyebrow">Small business web design · UK-wide</p>
+    <h1>Small business web design.<br /><span>Without the small print.</span></h1>
+    <p class="page-intro">Avocado Signal designs clear, fast websites for UK small businesses, sole traders and independent services that need to look established, get found and make it easy for customers to take the next step.</p>
+  </section>
+
+  <section class="service-list shell">
+    <article class="service-detail">
+      <div class="service-detail-number">01</div>
+      <div class="service-detail-copy">
+        <h2>Built for small businesses, not software departments.</h2>
+        <p class="service-lead">Most independent businesses need a useful website, not another system to administer.</p>
+        <p>We focus on the things that make a customer trust the business: a clear explanation of what you do, genuine proof, sensible contact options and a site that feels professional on a phone. No enterprise-sized platform hiding underneath it.</p>
+      </div>
+      <div class="service-includes">
+        <p class="section-kicker">A good fit for</p>
+        <ul>
+          <li>Sole traders</li>
+          <li>Independent trades</li>
+          <li>Local service businesses</li>
+          <li>New small companies</li>
+          <li>Established firms with tired websites</li>
+        </ul>
+      </div>
+    </article>
+
+    <article class="service-detail">
+      <div class="service-detail-number">02</div>
+      <div class="service-detail-copy">
+        <h2>The essentials are already included.</h2>
+        <p class="service-lead">You should not need a spreadsheet of add-ons just to launch a credible business website.</p>
+        <p>Every standard build includes responsive design, copy shaping from your notes, essential search setup, performance and accessibility checks, domain connection and launch support. Email, WhatsApp and other useful contact routes can be built in from the start.</p>
+      </div>
+      <div class="service-includes">
+        <p class="section-kicker">Included as standard</p>
+        <ul>
+          <li>Mobile, tablet and desktop layouts</li>
+          <li>Clear page structure</li>
+          <li>Essential SEO foundations</li>
+          <li>Performance-focused build</li>
+          <li>Secure launch support</li>
+        </ul>
+      </div>
+    </article>
+
+    <article class="service-detail">
+      <div class="service-detail-number">03</div>
+      <div class="service-detail-copy">
+        <h2>Small business website prices you can actually see.</h2>
+        <p class="service-lead">£495 for a focused one-page site. £995 for a complete five-page small business website.</p>
+        <p>There is no compulsory monthly package and no vague quote that grows while nobody is looking. Extra pages and optional services are priced clearly before the work begins.</p>
+      </div>
+      <div class="service-includes">
+        <p class="section-kicker">Straightforward options</p>
+        <ul>
+          <li><a href="/pricing">One-page website · £495</a></li>
+          <li><a href="/pricing">Five-page website · £995</a></li>
+          <li><a href="/pricing">Optional care · £180/year</a></li>
+          <li><a href="/pricing">See all pricing and extras</a></li>
+        </ul>
+      </div>
+    </article>
+
+    <article class="service-detail">
+      <div class="service-detail-number">04</div>
+      <div class="service-detail-copy">
+        <h2>Fast pages. Fewer moving parts.</h2>
+        <p class="service-lead">A lightweight website is good for customers, search performance and the amount of digital machinery you need to maintain.</p>
+        <p>Avocado Signal builds static-first sites where the job allows it, compresses assets and avoids unnecessary plugins, trackers and scripts. That usually means quicker loading, simpler hosting and less to go wrong later.</p>
+      </div>
+      <div class="service-includes">
+        <p class="section-kicker">Built to</p>
+        <ul>
+          <li>Load quickly</li>
+          <li>Work well on mobile</li>
+          <li>Stay easy to host</li>
+          <li>Reduce avoidable data transfer</li>
+          <li>Keep technical bloat down</li>
+        </ul>
+      </div>
+    </article>
+  </section>
+
+  <section class="quote-band">
+    <div class="shell quote-band-inner">
+      <p class="section-kicker light">The Avocado version</p>
+      <h2>Get found. Look good. Tread lightly.</h2>
+    </div>
+  </section>
+
+  <section class="pricing-section shell" aria-labelledby="process-heading">
+    <div class="pricing-section-heading">
+      <div>
+        <p class="section-kicker">How it works</p>
+        <h2 id="process-heading">A simple route from conversation to launch.</h2>
+      </div>
+      <p>You deal directly with Ivan throughout. No account manager relay race.</p>
+    </div>
+    <div class="terms-grid">
+      <article>
+        <span>01</span>
+        <h3>Talk</h3>
+        <p>Tell us about the business, the customers and what the website needs to achieve. Rough notes are absolutely fine.</p>
+      </article>
+      <article>
+        <span>02</span>
+        <h3>Build</h3>
+        <p>We shape the structure, design and supplied content into a fast, responsive website and work through the agreed revisions.</p>
+      </article>
+      <article>
+        <span>03</span>
+        <h3>Launch</h3>
+        <p>We connect the domain, complete the essential technical checks and put the finished site live.</p>
+      </article>
+    </div>
+  </section>
+
+  <section class="faq-section shell" aria-labelledby="faq-heading">
+    <div class="pricing-section-heading">
+      <div>
+        <p class="section-kicker">Small business web design FAQs</p>
+        <h2 id="faq-heading">Questions worth answering before you buy.</h2>
+      </div>
+    </div>
+    <div class="faq-list">
+      {faqs.map((faq) => (
+        <details>
+          <summary>{faq.question}</summary>
+          <p>{faq.answer}</p>
+        </details>
+      ))}
+    </div>
+  </section>
+
+  <section class="cta shell" id="contact">
+    <div>
+      <p class="section-kicker light">Small business. Better website.</p>
+      <h2>Let’s give it a signal.</h2>
+    </div>
+    <a class="button button-light" href="mailto:hello@avocadosignal.co.uk?subject=Small%20business%20website">Email Ivan</a>
+  </section>
+</BaseLayout>
