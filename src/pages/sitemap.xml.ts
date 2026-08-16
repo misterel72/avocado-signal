@@ -5,6 +5,7 @@ const pages = [
   '/services',
   '/pricing',
   '/about',
+  '/small-business-web-design',
   '/web-design-somerset',
   '/websites-for-trades'
 ];
