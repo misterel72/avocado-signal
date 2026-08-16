@@ -6,6 +6,7 @@ It creates clear, lightweight websites, logo identities and local-search foundat
 
 ## Core services
 
+- Small business web design across the UK
 - New small-business websites
 - Website redesign and rescue
 - Websites for plumbers, heating engineers, electricians, decorators, builders and other trades
@@ -26,6 +27,7 @@ Full details and optional extras are published at https://avocadosignal.co.uk/pr
 ## Canonical pages
 
 - https://avocadosignal.co.uk/
+- https://avocadosignal.co.uk/small-business-web-design
 - https://avocadosignal.co.uk/services
 - https://avocadosignal.co.uk/pricing
 - https://avocadosignal.co.uk/about
