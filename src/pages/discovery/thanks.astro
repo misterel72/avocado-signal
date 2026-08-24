@@ -1,0 +1,46 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+---
+
+<BaseLayout
+  title="Brief received | Avocado Signal"
+  description="Thanks for completing the Avocado Signal project discovery brief."
+  currentPath="/discovery/thanks"
+  noIndex={true}
+>
+  <section class="thanks shell">
+    <p class="eyebrow">Avocado Signal · Brief received</p>
+    <h1>Perfect.<br /><span>I’ve got it.</span></h1>
+    <p>
+      Thanks for taking the time to fill that in. I now have enough to start shaping the website, the collective brand and any useful options for the individual practitioners.
+    </p>
+    <p class="small">You can close this page. I’ll come back to you once I’ve gone through everything.</p>
+    <a class="home-link" href="/">Avocado Signal <span>→</span></a>
+  </section>
+</BaseLayout>
+
+<style>
+  .thanks {
+    min-height: 68vh;
+    padding: clamp(80px, 12vw, 150px) 0 120px;
+  }
+
+  .thanks h1 { max-width: 900px; }
+  .thanks > p:not(.eyebrow) {
+    max-width: 720px;
+    color: var(--muted);
+    font-size: clamp(1.08rem, 2vw, 1.28rem);
+  }
+
+  .thanks .small { font-size: .96rem !important; margin-top: 24px; }
+
+  .home-link {
+    display: inline-flex;
+    gap: 9px;
+    margin-top: 24px;
+    font-weight: 850;
+    text-decoration: none;
+    border-bottom: 2px solid var(--avocado);
+    padding-bottom: 4px;
+  }
+</style>
