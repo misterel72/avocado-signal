@@ -1,0 +1,548 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+---
+
+<BaseLayout
+  title="Collective Website & Brand Brief | Avocado Signal"
+  description="A private Avocado Signal discovery brief for a new collective website and visual identity."
+  currentPath="/discovery/collective"
+  noIndex={true}
+>
+  <section class="discovery-hero shell">
+    <p class="eyebrow">Avocado Signal · Project discovery</p>
+    <h1>Tell me about<br /><span>the collective.</span></h1>
+    <p class="discovery-intro">
+      No marketing language required. Just tell me what you are building, who is involved and how you want it to feel.
+      I will use your answers to work out what the website actually needs before we start designing anything.
+    </p>
+    <div class="discovery-note">
+      <strong>There are no wrong answers.</strong>
+      <span>If something is not decided yet, say so. That is useful information too.</span>
+    </div>
+  </section>
+
+  <section class="discovery-wrap shell">
+    <form
+      name="collective-discovery"
+      method="POST"
+      action="/discovery/thanks"
+      data-netlify="true"
+      netlify-honeypot="bot-field"
+      class="discovery-form"
+    >
+      <input type="hidden" name="form-name" value="collective-discovery" />
+      <input type="hidden" name="project-type" value="Collective website and brand" />
+      <p class="hidden-field">
+        <label>Do not fill this out if you are human: <input name="bot-field" /></label>
+      </p>
+
+      <fieldset>
+        <legend><span>01</span> The basics</legend>
+        <div class="field-grid two">
+          <label>
+            Your name
+            <input type="text" name="your-name" autocomplete="name" required />
+          </label>
+          <label>
+            Email
+            <input type="email" name="email" autocomplete="email" required />
+          </label>
+        </div>
+
+        <label>
+          What is the exact name of the collective?
+          <input type="text" name="collective-name" />
+        </label>
+
+        <label>
+          Is that definitely the final name, or are you still deciding?
+          <textarea name="name-status" rows="3"></textarea>
+        </label>
+
+        <div class="field-grid two">
+          <label>
+            Where will it be based? Town/city and state is fine for now.
+            <input type="text" name="location" />
+          </label>
+          <label>
+            When are you hoping to open?
+            <input type="text" name="opening-date" placeholder="A date, month or rough idea is fine" />
+          </label>
+        </div>
+
+        <label>
+          Who owns the collective?
+          <input type="text" name="owners" />
+        </label>
+
+        <label>
+          In your own words, what is the idea behind it?
+          <textarea name="collective-idea" rows="5" placeholder="Explain it as if we were chatting over coffee."></textarea>
+        </label>
+
+        <label>
+          Why did you decide to create it?
+          <textarea name="why-create" rows="4"></textarea>
+        </label>
+      </fieldset>
+
+      <fieldset>
+        <legend><span>02</span> The space</legend>
+
+        <div class="field-grid two">
+          <label>
+            How many rooms or spaces are there in total?
+            <input type="text" name="number-of-spaces" />
+          </label>
+          <label>
+            How many are already spoken for?
+            <input type="text" name="spaces-taken" />
+          </label>
+        </div>
+
+        <label>
+          Tell me how you expect the spaces to be used.
+          <textarea name="space-uses" rows="5" placeholder="Permanent rooms, part-time rooms, treatment space, workshops, shared areas and so on."></textarea>
+        </label>
+
+        <div class="choice-group">
+          <p>How might room rental work?</p>
+          <label><input type="checkbox" name="rental-model" value="Full time" /> Full time</label>
+          <label><input type="checkbox" name="rental-model" value="Particular days" /> Particular days</label>
+          <label><input type="checkbox" name="rental-model" value="Half days" /> Half days</label>
+          <label><input type="checkbox" name="rental-model" value="Hourly or sessional" /> Hourly or sessional</label>
+          <label><input type="checkbox" name="rental-model" value="Not decided" /> Not decided yet</label>
+        </div>
+
+        <label>
+          What facilities or benefits are included for practitioners?
+          <textarea name="facilities" rows="4"></textarea>
+        </label>
+
+        <label>
+          What should a potential practitioner know that might make them want to work there?
+          <textarea name="practitioner-pitch" rows="4"></textarea>
+        </label>
+      </fieldset>
+
+      <fieldset>
+        <legend><span>03</span> The people</legend>
+
+        <p class="field-help">
+          For everyone already involved, tell me their name, business name if they have one, what they do, and any website, Instagram or booking links they already use.
+        </p>
+        <label>
+          People already confirmed
+          <textarea name="confirmed-practitioners" rows="9" placeholder="Example: Jane Smith · Jane Skin Studio · facials and skin treatments · instagram.com/... · books via ..."></textarea>
+        </label>
+
+        <label>
+          Is anyone else likely to join soon?
+          <textarea name="possible-practitioners" rows="4"></textarea>
+        </label>
+
+        <div class="choice-group stacked">
+          <p>For the individual practitioners, what might they need?</p>
+          <label><input type="checkbox" name="practitioner-needs" value="Existing websites are fine" /> Existing websites are fine</label>
+          <label><input type="checkbox" name="practitioner-needs" value="Some need simple websites" /> Some need simple websites</label>
+          <label><input type="checkbox" name="practitioner-needs" value="Some need replacement websites" /> Some need replacement websites</label>
+          <label><input type="checkbox" name="practitioner-needs" value="Some need logos or branding" /> Some need logos or branding</label>
+          <label><input type="checkbox" name="practitioner-needs" value="Not sure yet" /> Not sure yet</label>
+        </div>
+      </fieldset>
+
+      <fieldset>
+        <legend><span>04</span> The collective brand</legend>
+
+        <div class="choice-group">
+          <p>Do you already have a logo?</p>
+          <label><input type="radio" name="logo-status" value="Yes" /> Yes</label>
+          <label><input type="radio" name="logo-status" value="No" /> No</label>
+          <label><input type="radio" name="logo-status" value="Idea only" /> We have an idea but nothing finished</label>
+        </div>
+
+        <div class="field-grid two">
+          <label>
+            Any colours you are drawn to?
+            <input type="text" name="preferred-colours" />
+          </label>
+          <label>
+            Any colours you definitely do not want?
+            <input type="text" name="avoid-colours" />
+          </label>
+        </div>
+
+        <div class="choice-group feel-grid">
+          <p>How should the collective feel? Pick as many as fit.</p>
+          <label><input type="checkbox" name="brand-feel" value="Calm" /> Calm</label>
+          <label><input type="checkbox" name="brand-feel" value="Natural" /> Natural</label>
+          <label><input type="checkbox" name="brand-feel" value="Contemporary" /> Contemporary</label>
+          <label><input type="checkbox" name="brand-feel" value="Premium" /> Premium</label>
+          <label><input type="checkbox" name="brand-feel" value="Welcoming" /> Welcoming</label>
+          <label><input type="checkbox" name="brand-feel" value="Holistic" /> Holistic</label>
+          <label><input type="checkbox" name="brand-feel" value="Professional" /> Professional</label>
+          <label><input type="checkbox" name="brand-feel" value="Creative" /> Creative</label>
+          <label><input type="checkbox" name="brand-feel" value="Spiritual" /> Spiritual</label>
+          <label><input type="checkbox" name="brand-feel" value="Community focused" /> Community focused</label>
+          <label><input type="checkbox" name="brand-feel" value="Minimal" /> Minimal</label>
+          <label><input type="checkbox" name="brand-feel" value="Colourful" /> Colourful</label>
+          <label><input type="checkbox" name="brand-feel" value="Earthy" /> Earthy</label>
+          <label><input type="checkbox" name="brand-feel" value="Luxurious" /> Luxurious</label>
+        </div>
+
+        <label>
+          Any brands, websites, interiors or Instagram accounts whose look you love?
+          <textarea name="visual-inspiration" rows="4" placeholder="Links are perfect."></textarea>
+        </label>
+
+        <label>
+          Anything you absolutely do not want it to look or feel like?
+          <textarea name="visual-avoid" rows="4"></textarea>
+        </label>
+      </fieldset>
+
+      <fieldset>
+        <legend><span>05</span> The website</legend>
+
+        <label>
+          What is the single most important thing somebody should do after visiting the site?
+          <textarea name="primary-goal" rows="3" placeholder="Find a practitioner, book, attend an event, enquire about a room, understand the collective..."></textarea>
+        </label>
+
+        <div class="choice-group stacked">
+          <p>What would you like the website to contain?</p>
+          <label><input type="checkbox" name="site-features" value="About the collective" /> About the collective</label>
+          <label><input type="checkbox" name="site-features" value="Practitioner profiles" /> Practitioner profiles</label>
+          <label><input type="checkbox" name="site-features" value="Links to practitioner websites" /> Links to individual practitioner websites</label>
+          <label><input type="checkbox" name="site-features" value="Links to booking systems" /> Links to individual booking systems</label>
+          <label><input type="checkbox" name="site-features" value="Events and workshops" /> Events and workshops</label>
+          <label><input type="checkbox" name="site-features" value="Available rooms" /> Available rooms</label>
+          <label><input type="checkbox" name="site-features" value="Rental enquiries" /> Practitioner and rental enquiries</label>
+          <label><input type="checkbox" name="site-features" value="Gallery" /> Gallery</label>
+          <label><input type="checkbox" name="site-features" value="Instagram" /> Instagram</label>
+          <label><input type="checkbox" name="site-features" value="Contact form" /> Contact form</label>
+          <label><input type="checkbox" name="site-features" value="Map and directions" /> Map and directions</label>
+          <label><input type="checkbox" name="site-features" value="Testimonials" /> Testimonials</label>
+          <label><input type="checkbox" name="site-features" value="Newsletter" /> Newsletter signup</label>
+        </div>
+
+        <div class="field-grid two">
+          <div class="choice-group stacked compact">
+            <p>Would you like to add and change events yourselves?</p>
+            <label><input type="radio" name="edit-events" value="Yes" /> Yes</label>
+            <label><input type="radio" name="edit-events" value="No" /> No</label>
+            <label><input type="radio" name="edit-events" value="Not sure" /> Not sure</label>
+          </div>
+          <div class="choice-group stacked compact">
+            <p>Would you like to add practitioners yourselves?</p>
+            <label><input type="radio" name="edit-practitioners" value="Yes" /> Yes</label>
+            <label><input type="radio" name="edit-practitioners" value="No" /> No</label>
+            <label><input type="radio" name="edit-practitioners" value="Not sure" /> Not sure</label>
+          </div>
+        </div>
+      </fieldset>
+
+      <fieldset>
+        <legend><span>06</span> Events, photos and content</legend>
+
+        <label>
+          What sort of events or workshops might happen there?
+          <textarea name="event-types" rows="4"></textarea>
+        </label>
+
+        <label>
+          How would people book or pay for events, if at all?
+          <textarea name="event-booking" rows="4" placeholder="Tell me what you use already, or just say not decided."></textarea>
+        </label>
+
+        <div class="choice-group stacked">
+          <p>What photographs could we realistically get?</p>
+          <label><input type="checkbox" name="photo-assets" value="Outside building" /> Outside of the building</label>
+          <label><input type="checkbox" name="photo-assets" value="Treatment rooms" /> Treatment rooms</label>
+          <label><input type="checkbox" name="photo-assets" value="Shared spaces" /> Shared spaces</label>
+          <label><input type="checkbox" name="photo-assets" value="Practitioner portraits" /> Each practitioner</label>
+          <label><input type="checkbox" name="photo-assets" value="Treatments" /> Treatments and services</label>
+          <label><input type="checkbox" name="photo-assets" value="Events" /> Events and workshops</label>
+          <label><input type="checkbox" name="photo-assets" value="Not ready yet" /> The building is not ready yet</label>
+        </div>
+
+        <label>
+          Do you already have any written material, brochures, social posts or other content I should see?
+          <textarea name="existing-content" rows="4"></textarea>
+        </label>
+      </fieldset>
+
+      <fieldset>
+        <legend><span>07</span> Domain, socials and practical stuff</legend>
+
+        <div class="field-grid two">
+          <label>
+            Have you bought a domain name? If yes, what is it?
+            <input type="text" name="domain" />
+          </label>
+          <label>
+            Do you already have a collective Instagram or other social account?
+            <input type="text" name="social-accounts" />
+          </label>
+        </div>
+
+        <div class="choice-group">
+          <p>Would you like a professional email address, such as hello@yourbusiness.com?</p>
+          <label><input type="radio" name="professional-email" value="Yes" /> Yes</label>
+          <label><input type="radio" name="professional-email" value="No" /> No</label>
+          <label><input type="radio" name="professional-email" value="Not sure" /> Not sure</label>
+        </div>
+
+        <div class="field-grid two">
+          <label>
+            Ideally, when would you like the website live?
+            <input type="text" name="website-live-date" />
+          </label>
+          <label>
+            Who will make the final decisions about the site and branding?
+            <input type="text" name="decision-makers" />
+          </label>
+        </div>
+
+        <label>
+          Anything important I have not asked about?
+          <textarea name="anything-else" rows="5"></textarea>
+        </label>
+
+        <label>
+          Finally, describe the collective in your own words.
+          <textarea name="in-your-own-words" rows="7" placeholder="Imagine you are explaining it to somebody over coffee. Do not make it polished. That is my job."></textarea>
+        </label>
+      </fieldset>
+
+      <div class="submit-panel">
+        <div>
+          <p class="section-kicker light">That is plenty to get started</p>
+          <h2>Send it my way.</h2>
+          <p>I will turn this into a clear recommendation for the site, branding and anything the individual practitioners might need.</p>
+        </div>
+        <button type="submit" class="submit-button">Send the brief <span>→</span></button>
+      </div>
+    </form>
+  </section>
+</BaseLayout>
+
+<style>
+  .discovery-hero {
+    padding: 96px 0 72px;
+    border-bottom: 1px solid var(--line);
+  }
+
+  .discovery-hero h1 {
+    max-width: 920px;
+    margin-bottom: 30px;
+  }
+
+  .discovery-intro {
+    max-width: 760px;
+    color: var(--muted);
+    font-size: clamp(1.08rem, 2vw, 1.3rem);
+  }
+
+  .discovery-note {
+    margin-top: 34px;
+    display: inline-flex;
+    flex-wrap: wrap;
+    gap: 8px 12px;
+    padding: 16px 20px;
+    border-radius: 16px;
+    background: var(--cream);
+  }
+
+  .discovery-note span { color: var(--muted); }
+
+  .discovery-wrap { padding: 72px 0 110px; }
+  .discovery-form { display: grid; gap: 28px; }
+
+  fieldset {
+    margin: 0;
+    padding: clamp(24px, 4vw, 46px);
+    border: 1px solid var(--line);
+    border-radius: 28px;
+    background: white;
+  }
+
+  legend {
+    padding: 0 14px;
+    font-size: clamp(1.6rem, 3vw, 2.35rem);
+    font-weight: 850;
+    letter-spacing: -.04em;
+    color: var(--ink-dark);
+  }
+
+  legend span {
+    display: inline-grid;
+    place-items: center;
+    width: 38px;
+    height: 38px;
+    margin-right: 10px;
+    border-radius: 50%;
+    background: var(--lime);
+    color: var(--ink);
+    font-size: .8rem;
+    letter-spacing: 0;
+    vertical-align: middle;
+  }
+
+  label {
+    display: grid;
+    gap: 9px;
+    margin-top: 24px;
+    font-weight: 720;
+  }
+
+  input[type='text'],
+  input[type='email'],
+  textarea {
+    width: 100%;
+    border: 1px solid #cfd5cc;
+    border-radius: 14px;
+    background: var(--paper);
+    color: var(--ink-dark);
+    font: inherit;
+    font-weight: 450;
+    padding: 14px 16px;
+    outline: none;
+    transition: border-color .15s ease, box-shadow .15s ease, background .15s ease;
+  }
+
+  textarea { resize: vertical; min-height: 92px; }
+
+  input[type='text']:focus,
+  input[type='email']:focus,
+  textarea:focus {
+    border-color: var(--avocado);
+    background: white;
+    box-shadow: 0 0 0 4px rgba(132, 168, 61, .12);
+  }
+
+  .field-grid {
+    display: grid;
+    gap: 0 24px;
+  }
+
+  .field-grid.two { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+
+  .field-help {
+    margin: 18px 0 0;
+    max-width: 760px;
+    color: var(--muted);
+  }
+
+  .choice-group {
+    margin-top: 26px;
+    padding: 20px;
+    border-radius: 16px;
+    background: var(--cream);
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px 20px;
+  }
+
+  .choice-group p {
+    flex: 0 0 100%;
+    margin: 0 0 2px;
+    font-weight: 800;
+  }
+
+  .choice-group label {
+    display: flex;
+    align-items: flex-start;
+    gap: 9px;
+    margin: 0;
+    font-weight: 600;
+    cursor: pointer;
+  }
+
+  .choice-group input[type='checkbox'],
+  .choice-group input[type='radio'] {
+    width: 18px;
+    height: 18px;
+    margin: 3px 0 0;
+    accent-color: var(--ink);
+    flex: 0 0 auto;
+  }
+
+  .choice-group.stacked { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .choice-group.stacked p { grid-column: 1 / -1; }
+  .choice-group.compact { align-content: start; }
+  .feel-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); }
+  .feel-grid p { grid-column: 1 / -1; }
+
+  .hidden-field {
+    position: absolute;
+    left: -9999px;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+  }
+
+  .submit-panel {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: center;
+    gap: 36px;
+    padding: clamp(30px, 5vw, 56px);
+    border-radius: 28px;
+    background: var(--ink);
+    color: white;
+  }
+
+  .submit-panel h2 {
+    margin: 0 0 14px;
+    font-size: clamp(2.3rem, 5vw, 4.6rem);
+    line-height: .95;
+    letter-spacing: -.05em;
+  }
+
+  .submit-panel > div > p:last-child {
+    max-width: 680px;
+    margin: 0;
+    color: #d8e0db;
+  }
+
+  .submit-button {
+    border: 0;
+    border-radius: 999px;
+    padding: 15px 22px;
+    background: var(--lime);
+    color: var(--ink);
+    font: inherit;
+    font-weight: 850;
+    cursor: pointer;
+    white-space: nowrap;
+    transition: transform .15s ease, background .15s ease;
+  }
+
+  .submit-button:hover,
+  .submit-button:focus-visible {
+    transform: translateY(-2px);
+    background: #d2e77a;
+  }
+
+  .submit-button span { margin-left: 7px; }
+
+  @media (max-width: 820px) {
+    .discovery-hero { padding-top: 64px; }
+    .field-grid.two,
+    .choice-group.stacked,
+    .feel-grid,
+    .submit-panel { grid-template-columns: 1fr; }
+    .choice-group.stacked p,
+    .feel-grid p { grid-column: auto; }
+    .submit-panel { align-items: start; }
+    .submit-button { justify-self: start; }
+  }
+
+  @media (max-width: 520px) {
+    .discovery-wrap { padding-top: 46px; }
+    fieldset { border-radius: 20px; }
+    legend { padding: 0 6px; }
+    .choice-group { display: grid; }
+  }
+</style>
