@@ -1,0 +1,12 @@
+name: Audit demo sites
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '15 6 * * *'
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Check live demo image URLs and navigation
+        run: python3 scripts/audit_demos.py
