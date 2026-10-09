@@ -1,0 +1,8 @@
+export const projects = [
+ {slug:'piano-borracho',name:'Piano Borracho',sector:'Hospitality',location:'Spain',status:'Uncommissioned concept',url:'https://avocado-pianoborracho-concept.netlify.app/',summary:'An atmospheric hospitality experience with room discovery and a strong sense of place.'},
+ {slug:'pamir-eco-tourism',name:'Pamir Eco Tourism',sector:'Travel & Tourism',location:'Tajikistan',status:'Uncommissioned concept',url:'https://pamir-avocado-concept.netlify.app/',summary:'Destination-led storytelling for adventurous travellers.'},
+ {slug:'hm-electrical',name:'HM Electrical Services',sector:'Trades & Services',location:'United Kingdom',status:'Redesign proposal',url:'https://preview.avocadosignal.co.uk/hm-electrical-services/#services',summary:'Clear, confident presentation for a local electrical business.'},
+ {slug:'travel-world',name:'Travel World',sector:'Travel & Tourism',location:'Tajikistan',status:'Uncommissioned concept',url:'https://travelworld-avocado-concept.netlify.app/',summary:'An accessible, image-led approach to exploring destinations.'},
+ {slug:'samarcanda',name:'Samarcanda',sector:'Travel & Tourism',location:'Uzbekistan',status:'Uncommissioned concept',url:'https://samarcanda-avocado-concept.netlify.app/',summary:'A distinctive travel concept with a focus on cultural discovery.'},
+ {slug:'pamir-trips',name:'Pamir Trips',sector:'Travel & Tourism',location:'Tajikistan',status:'Uncommissioned concept',url:'https://pamirtrips-avocado-concept.netlify.app/',summary:'A travel experience concept built around discovery and exploration.'}
+];
