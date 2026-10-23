@@ -10,17 +10,19 @@
 - The corresponding `pilotMembers` document exists with `enabled: true`.
 - Deployed Firestore rules were retrieved through Firebase MCP and match the tested rules in this folder.
 - The local `.env.local` is configured for this project and a production build succeeds.
+- The pilot is published at `https://avocado-signal-pilot.netlify.app/` through a separate Netlify project using branch `codex/firebase-pilot`, base directory `pilot`, and publish directory `dist`.
+- Firebase Auth's exact authorized-domain list was checked after adding `avocado-signal-pilot.netlify.app`; the existing Firebase domains were retained.
+- Hosted demo creation, search and persistence across a page reload were verified in Chrome with fictional tab-local data. A desktop screenshot is saved with the task outputs.
+- Mobile review found an accessibility-label positioning issue that widened the document; the scroll container now establishes a positioning context. The corrected deployment must be rechecked at a mobile width.
 
 No prospect data, draft notes or emails have been imported or sent. Existing Firebase workbook projects, the Astro production website and Apps Script Command Centre are unchanged.
 
 ## Remaining activation
 
-1. Complete GitHub sign-in to the existing Netlify account in the browser tab prepared for this task.
-2. Create a separate Netlify pilot site; preserve the existing site's production settings and DNS. Use the pilot folder as base, `npm ci && npm run build` as build command, and `dist` as publish directory. Alternatively upload the separately packaged cloud build to a new site.
-3. Set the four `VITE_FIREBASE_*` build variables if using repository builds. The values exist locally in the ignored `.env.local`; never add Firebase admin keys.
-4. Add the exact new Netlify hostname to Firebase Auth's authorized domains. Preserve the existing domains. Confirm the backend's domains directly; do not assume declaring `authorizedDomains` locally applies them.
-5. Verify real Google sign-in, owner membership, prospect creation, update and persistence, denied unapproved access, sign-out, desktop/mobile rendering and CSV download on the hosted pilot.
-6. Install/open Antigravity, sign in, and open this folder using the scoped brief. Antigravity was not found on PATH or in the inspected Windows uninstall entries; it has not been run or configured.
+1. Complete account selection in the Google sign-in popup. The Google chooser loaded the correct owner account, but its renderer did not respond to automated input. A completed browser sign-in is not yet verified.
+2. Verify real Google sign-in, cloud prospect creation/update/persistence, denied unapproved access and sign-out on the hosted pilot. The prior emulator rule tests passed; they do not substitute for real browser sign-in.
+3. Recheck the mobile layout after the correction is deployed.
+4. Install/open Antigravity, sign in, and open this folder using the scoped brief. Antigravity was not found on PATH or in the inspected Windows uninstall entries; it has not been run or configured.
 
 Google account credentials and the one-time authorization code must not be placed in the repository. Local provisioning configuration and owner data are under ignored paths and are excluded from deliverable source archives.
 

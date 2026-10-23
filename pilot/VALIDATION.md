@@ -10,9 +10,9 @@ Completed:
 
 Limits and outstanding work:
 
-- Browser visual QA is outstanding. Local HTTP preview requests timed out; the browser URL policy also rejected opening the standalone file, so no rendered screenshot is supplied.
+- Hosted desktop visual QA and demo create/search/reload checks now pass; a screenshot is supplied in the task outputs. Earlier local preview attempts failed. Mobile review identified an accessibility-label overflow issue and a scoped scroll-container fix is included; the corrected live deployment needs a mobile recheck.
 - DOM interaction tests use jsdom and dialog stubs; they do not verify rendering, responsive appearance, Google popup behavior or real cloud access.
-- Firebase project, London database, Google sign-in configuration and owner membership have now been provisioned and verified; see `CLOUD_STATUS.md`. Netlify deployment and browser sign-in tests are still pending. No production data was copied.
+- Firebase project, London database, Google sign-in configuration and owner membership have now been provisioned and verified; see `CLOUD_STATUS.md`. The separate Netlify pilot is published and its hostname is authorized in Firebase. Completed browser sign-in and cloud persistence tests are still pending because the Google account chooser did not respond to automation. No production data was copied.
 - Antigravity instructions and a scoped project brief are prepared. Antigravity itself has not been installed, signed in or run.
 - Firebase CLI has 7 development-only transitive audit findings (4 moderate, 3 high). It is not part of the deployed browser bundle. Review before broader CLI use.
 - The Firebase browser bundle is approximately 579 KB before gzip. It is acceptable for this functional pilot; lazy loading is a possible later improvement.
