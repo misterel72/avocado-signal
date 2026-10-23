@@ -10,7 +10,7 @@ async function setup(){
  w.HTMLDialogElement.prototype.close=function(){this.open=false;};
  const model=(await readFile(new URL('../src/model.js',import.meta.url),'utf8')).replace(/^export /gm,'');
  const main=(await readFile(new URL('../src/main.js',import.meta.url),'utf8')).replace(/^import .*;\r?\n/gm,'');
- w.eval(`const configured=false;const watchAuth=async()=>{};const login=async()=>{throw new Error('Firebase is not connected yet.');};${model}\n${main}`);
+ w.eval(`const configured=false;const watchAuth=async callback=>{window.__authCallback=callback;};const member=async()=>true;const loadProspects=async()=>window.__cloudResult||{rows:[],capped:false};const login=async()=>{throw new Error('Firebase is not connected yet.');};${model}\n${main}`);
  return {dom,w,doc:w.document,click:selector=>w.document.querySelector(selector).click()};
 }
 test('demo supports create, edit, filtering, drafts and suppression',async()=>{
@@ -44,5 +44,27 @@ test('demo catches validation failures and sign-in explains pending configuratio
   click('#demo');click('#add');const form=doc.querySelector('#prospect-form');
   form.elements.business.value='Invalid value';form.elements.value.value='-1';form.dispatchEvent(new w.Event('submit',{cancelable:true}));
   assert.equal(doc.querySelector('#form-error').hidden,false);assert.equal(doc.querySelector('#save').disabled,false);
+ }finally{dom.window.close();}
+});
+test('a delayed signed-out auth callback preserves the selected demo workspace',async()=>{
+ const {dom,w,doc,click}=await setup();
+ try{
+  click('#demo');
+  await w.__authCallback(null);
+  assert.match(doc.body.textContent,/Fictional demo data/);
+  assert.ok(doc.querySelector('#add'));
+ }finally{dom.window.close();}
+});
+test('a cloud response cannot overwrite demo records after switching workspaces',async()=>{
+ const {dom,w,doc,click}=await setup();
+ try{
+  let release;w.__cloudResult=new Promise(resolve=>{release=resolve;});
+  const pending=w.__authCallback({uid:'test-owner'});
+  await new Promise(resolve=>setTimeout(resolve,0));
+  click('#demo');
+  release({rows:[{business:'Cloud-only sample'}],capped:false});await pending;
+  click('[data-view="Prospects"]');
+  assert.match(doc.body.textContent,/Fictional demo data/);
+  assert.doesNotMatch(doc.querySelector('#workspace').textContent,/Cloud-only sample/);
  }finally{dom.window.close();}
 });

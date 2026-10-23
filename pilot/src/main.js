@@ -36,7 +36,7 @@ function bind() {
  document.querySelectorAll('[data-view]').forEach(b=>b.onclick=()=>{view=b.dataset.view;search='';stageFilter='';shell();});
  document.querySelectorAll('[data-edit]').forEach(b=>b.onclick=()=>edit(b.dataset.edit));
  for(const id of ['signin','connect'])document.getElementById(id)?.addEventListener('click',()=>attemptLogin());
- document.getElementById('demo')?.addEventListener('click',()=>{mode='demo';view='Overview';capped=false;try{rows=JSON.parse(sessionStorage.getItem('avocado-pilot-demo')||'null')||demoRows();}catch{rows=demoRows();}shell();});
+ document.getElementById('demo')?.addEventListener('click',()=>{authEpoch++;mode='demo';busy=false;view='Overview';capped=false;try{rows=JSON.parse(sessionStorage.getItem('avocado-pilot-demo')||'null')||demoRows();}catch{rows=demoRows();}shell();});
  document.getElementById('leave')?.addEventListener('click',async()=>{if(mode==='cloud'){try{await logout();}catch{notice('Sign-out failed. Please try again.',true);}}else{mode='signed-out';rows=[];shell();}});
  document.getElementById('add')?.addEventListener('click',()=>edit());
  document.getElementById('search')?.addEventListener('input',e=>{search=e.target.value;document.querySelector('#workspace').innerHTML=workspace();bindWorkspace();});
@@ -71,7 +71,7 @@ function edit(id) {
  dlg.showModal();
 }
 shell();
-watchAuth(async account=>{const epoch=++authEpoch;user=account;rows=[];mode='signed-out';busy=!!account;shell();if(!account)return;
- try{if(!await member(account.uid))throw new Error(`Your account needs pilot approval. Ask the project owner to enable membership for user ID: ${account.uid}`);if(epoch!==authEpoch)return;mode='cloud';await refresh();if(epoch!==authEpoch)return;busy=false;view='Overview';shell();}
+watchAuth(async account=>{if(!account&&mode==='demo'){user=null;return;}const epoch=++authEpoch;user=account;rows=[];mode='signed-out';busy=!!account;shell();if(!account)return;
+ try{if(!await member(account.uid))throw new Error(`Your account needs pilot approval. Ask the project owner to enable membership for user ID: ${account.uid}`);if(epoch!==authEpoch)return;const loaded=await loadProspects(account.uid);if(epoch!==authEpoch)return;mode='cloud';rows=loaded.rows;capped=loaded.capped;busy=false;view='Overview';shell();}
  catch(e){if(epoch!==authEpoch)return;busy=false;mode='signed-out';shell();notice(e.message||'Could not connect to Firebase.',true);}
 }).catch(()=>notice('Firebase sign-in could not initialise. Refresh to try again, or explore the demo.',true));
