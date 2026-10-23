@@ -10,7 +10,7 @@ Completed:
 
 Limits and outstanding work:
 
-- Hosted desktop visual QA and demo create/search/reload checks now pass; a screenshot is supplied in the task outputs. Earlier local preview attempts failed. The corrected live mobile layout has document width 375 px at a 390 px viewport, with table content scrolling inside its container. A delayed-auth timing correction is covered by regression tests and awaits final hosted recheck.
+- Hosted desktop visual QA and demo create/search/reload checks now pass; desktop and mobile screenshots are supplied in the task outputs. Earlier local preview attempts failed. The corrected live mobile layout has document width 375 px at a 390 px viewport, with table content scrolling inside its container. The delayed-auth correction is covered by regression tests, and demo stability was rechecked on the final hosted build.
 - A live unauthenticated read attempt against the owner prospect path was denied by Firestore.
 - DOM interaction tests use jsdom and dialog stubs; they do not verify rendering, responsive appearance, Google popup behavior or real cloud access.
 - Firebase project, London database, Google sign-in configuration and owner membership have now been provisioned and verified; see `CLOUD_STATUS.md`. The separate Netlify pilot is published and its hostname is authorized in Firebase. Completed browser sign-in and cloud persistence tests are still pending because the Google account chooser did not respond to automation. No production data was copied.

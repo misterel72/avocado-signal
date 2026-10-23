@@ -16,15 +16,15 @@
 - Mobile review found an accessibility-label positioning issue that widened the document; the scroll container now establishes a positioning context. On the corrected live deployment, the document width is 375 px at a 390 px viewport, so there is no page-level horizontal overflow.
 - A live unauthenticated Firestore read attempt was rejected with `permission-denied`.
 - Regression tests now cover delayed Firebase auth callbacks so demo mode is retained and delayed cloud responses cannot replace demo records.
+- The final app build (`index-CjjCEgOV.js`) is published. Demo stability after reload and the corrected mobile document width were checked on that hosted build.
 
 No prospect data, draft notes or emails have been imported or sent. Existing Firebase workbook projects, the Astro production website and Apps Script Command Centre are unchanged.
 
 ## Remaining activation
 
-1. Complete account selection in the Google sign-in popup. The Google chooser loaded the correct owner account, but its renderer did not respond to automated input. A completed browser sign-in is not yet verified.
+1. Start a fresh Google sign-in on the live pilot and complete account selection manually. The Google chooser loaded the correct owner account, but its renderer did not respond to automated input. The stalled popup was closed; a completed browser sign-in is not yet verified.
 2. Verify real Google sign-in, cloud prospect creation/update/persistence, denied unapproved access and sign-out on the hosted pilot. The prior emulator rule tests passed; they do not substitute for real browser sign-in.
-3. Complete final hosted verification of the auth-callback timing correction.
-4. Install/open Antigravity, sign in, and open this folder using the scoped brief. Antigravity was not found on PATH or in the inspected Windows uninstall entries; it has not been run or configured.
+3. Install/open Antigravity, sign in, and open this folder using the scoped brief. Antigravity was not found on PATH or in the inspected Windows uninstall entries; it has not been run or configured.
 
 Google account credentials and the one-time authorization code must not be placed in the repository. Local provisioning configuration and owner data are under ignored paths and are excluded from deliverable source archives.
 
