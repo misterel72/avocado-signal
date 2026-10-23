@@ -1,0 +1,24 @@
+{
+  "name": "avocado-signal-pilot",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite --host 127.0.0.1",
+    "build": "vite build",
+    "preview": "vite preview --host 127.0.0.1",
+    "test": "node --test tests/model.test.js tests/ui.test.js",
+    "test:rules": "firebase emulators:exec --project demo-avocado-pilot --only firestore \"node --test tests/rules.test.js\""
+  },
+  "dependencies": {
+    "firebase": "^13.1.0"
+  },
+  "devDependencies": {
+    "@firebase/rules-unit-testing": "^6.0.0",
+    "firebase-tools": "^15.34.1",
+    "jsdom": "^30.1.3",
+    "vite": "^8.3.5"
+  },
+  "overrides": {
+    "@grpc/grpc-js": "1.14.6"
+  }
+}
