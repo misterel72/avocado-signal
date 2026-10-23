@@ -32,7 +32,7 @@ npm run build
 
 ## Connect the cloud pilot
 
-Cloud activation is still pending. Use a new Firebase project, clearly labelled Avocado Signal Pilot. Keep the no-cost **Spark** plan and do not attach a billing account. Authentication and Firestore have usage limits; Spark is not a promise of unlimited capacity.
+The task's isolated cloud backend has now been provisioned; see `CLOUD_STATUS.md`. Hosting and end-to-end sign-in checks remain pending. The instructions below are retained for a fresh setup; reuse the existing pilot rather than creating another project. Keep the no-cost **Spark** plan and do not attach a billing account. Authentication and Firestore have usage limits; Spark is not a promise of unlimited capacity.
 
 1. Enable **Authentication → Google** for your own Google account and select the support email.
 2. Create a **Cloud Firestore Standard** database in production mode. Select the location before creating it; use the region appropriate to your data and users.
